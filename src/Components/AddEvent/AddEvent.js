@@ -13,7 +13,7 @@ const AddEvent = () => {
   const [toggle, setToggle] = useState(false);
   const [task, setTask] = useState({});
   const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2020-08-18T21:11:54")
+    new Date("2020-07-18T21:11:54")
   );
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -29,7 +29,7 @@ const AddEvent = () => {
   };
 
   const submit = () => {
-    fetch("https://mern-volunteer-networks.herokuapp.com/addToRawData", {
+    fetch("https://mern-volunteer-networks.herokuapp.com/addToData", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(task),
@@ -47,7 +47,7 @@ const AddEvent = () => {
       <Form className="event-form">
         <Form.Row>
           <Form.Group style={{ marginRight: "50px" }} as={Col}>
-            <Form.Label>Event Title</Form.Label>
+            <Form.Label>EVENT TITLE</Form.Label>
             <Form.Control
               onBlur={handleBlur}
               type="text"
@@ -77,42 +77,35 @@ const AddEvent = () => {
 
         <Form.Row>
           <Form.Group as={Col} style={{ marginRight: "50px" }}>
-            <Form.Label>Description</Form.Label>
+            <Form.Label>DESCRIPTION</Form.Label>
             <Form.Control
               onBlur={handleBlur}
               name="description"
-              placeholder="Enter description"
+              placeholder="Enter your description here..."
               as="textarea"
               rows={3}
             />
           </Form.Group>
 
           <Form.Group as={Col}>
-            <Form.Label>Banner</Form.Label>
+            <Form.Label>BANNER</Form.Label>
             <br></br>
-            {uploaded ? (
-              <p>Image Uploaded!</p>
-            ) : (
-              <div onClick={uploadImage} className="upload-image-btn">
-                {" "}
-                <img
-                  src={upload}
-                  className="upload-logo"
-                  alt="upload"
-                ></img>{" "}
-                Upload Image
-              </div>
-            )}
+
+            <div onClick={uploadImage} className="upload-image-btn">
+              {" "}
+              <img src={upload} className="upload-logo" alt="upload"></img>{" "}
+              Upload Image
+            </div>
           </Form.Group>
         </Form.Row>
       </Form>
       {toggle ? (
         <button className="add-event-btn" disabled>
-          Submitted
+          SUBMITTED
         </button>
       ) : (
         <button onClick={submit} className="add-event-btn">
-          Submit
+          SUBMIT
         </button>
       )}
     </div>

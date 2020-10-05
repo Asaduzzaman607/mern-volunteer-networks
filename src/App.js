@@ -20,7 +20,7 @@ function App() {
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
           <Switch>
-            <Route path="/addToRawData">
+            <Route path="/addToData">
               <InsertMany></InsertMany>
             </Route>
             <Route exact path="/">

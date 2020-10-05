@@ -24,7 +24,7 @@ const EventTaskCards = (props) => {
             <Col sm={7}>
               <h2>{task}</h2>
               <p>{selectedDate}</p>
-              <Button onClick={deleteTask}>Cancel</Button>
+              <Button onClick={deleteTask}>CANCEL</Button>
             </Col>
           </Row>
         </Container>

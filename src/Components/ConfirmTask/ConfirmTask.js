@@ -19,7 +19,7 @@ const ConfirmTask = () => {
   const { id } = useParams();
   const tasks = AllTaskList();
   const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2020-08-18T21:11:54")
+    new Date("2020-07-18T21:11:54")
   );
   const selectedTask = tasks.filter((tsk) => tsk._id === id);
   const handleDateChange = (date) => {
@@ -104,7 +104,7 @@ const ConfirmTask = () => {
           </form>
           <Link to="/eventTasks">
             <button onClick={submit} className="submit-btn">
-              Registration
+              REGISTRATION
             </button>
           </Link>
         </div>
